@@ -1,0 +1,34 @@
+<!-- <div class="todo-list-wrapper">
+  <ul>
+    @for(todo of this.visibleTodos(); track todo.id) {
+    <li>{{ todo.text }}</li>
+    }@empty {
+    <li>There are no items.</li>
+    }
+  </ul>
+</div> -->
+
+<div class="todo-list-wrapper">
+  <p-table
+    [value]="this.visibleTodos()"
+    dataKey="code"
+    [tableStyle]="{ 'min-width': '50rem' }"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 4rem"><p-tableHeaderCheckbox /></th>
+        <th>Task name</th>
+        <th>Delete</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-todo>
+      <tr>
+        <td>
+          <p-tableRadioButton [value]="todo" />
+        </td>
+        <td>{{ todo.text }}</td>
+        <td>Delete</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

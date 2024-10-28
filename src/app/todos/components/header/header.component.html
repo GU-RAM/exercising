@@ -1,0 +1,11 @@
+<header class="header flex flex-col gap-5 items-center">
+  <h1>Todos</h1>
+  <input
+    class="new-todo"
+    placeholder="add todo"
+    autofocus
+    [value]="text"
+    (keyup)="changeText($event)"
+    (keyup.enter)="addTodo()"
+  />
+</header>
